@@ -5,9 +5,9 @@
 using namespace std;
 
 class ParkingSystem{
+public:
     ParkingSystem();
     ~ParkingSystem();
-
     void createLot(int id, int rows, int columns);
     void removeLot(int id);
     void listLots();
