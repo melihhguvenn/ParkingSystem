@@ -12,6 +12,7 @@ private:
     int id;
     int rows;
     int columns;
+    char** lot;
 };
 
 #endif

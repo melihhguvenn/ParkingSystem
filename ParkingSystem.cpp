@@ -14,18 +14,26 @@ ParkingSystem::~ParkingSystem(){
 }
 
 void ParkingSystem::createLot(int id, int rows, int columns){
-    for (int i = 0; i < (sizeof(lotsArr)/sizeof(*lotsArr)); i++)
+    if (rows > 12 || columns > 12 || rows <= 0 || columns <= 0)
     {
-        if (lotsArr[i]->getId() == id)
-        {
-            cout << "The parking lot id is not unique" << endl;
-            break;
+        cout << "Row and column number should be in (0, 13) interval" << endl;
+    }
+
+    else{
+        for (int i = 0; i < (sizeof(lotsArr)/sizeof(*lotsArr)); i++){
+            if (lotsArr[i]->getId() == id){
+                cout << "The parking lot id is not unique" << endl;
+                break;
+            }
+
+            if(lotsArr[i]->getId() == 0){
+                lotsArr[i] = new ParkingLot(id, rows, columns);
+                break;
+            }
+        
         }
 
-        if(lotsArr[i]->getId() == 0){
-            lotsArr[i] = new ParkingLot(id, rows, columns);
-        }
-        
+        cout << "More than 5 Parking Lot cannot be created" << endl;
     }
     
 }
