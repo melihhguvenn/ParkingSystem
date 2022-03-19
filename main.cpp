@@ -20,8 +20,7 @@ int main(){
     L.createLot(434, 13, 3);
     L.createLot(222, 5, 4);
     L.createLot(301, 9, 9);
-    cout << endl;ü
-    dsadsa
+    cout << endl;
 
     L.createLot(301, 19, 3);
     L.createLot(205, 4, 4);

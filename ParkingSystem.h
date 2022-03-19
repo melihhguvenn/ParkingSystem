@@ -2,6 +2,7 @@
 #define __PARKINGSYSTEM_H_
 
 #include <iostream>
+#include "ParkingLot.h"
 using namespace std;
 
 class ParkingSystem{
@@ -15,6 +16,9 @@ public:
     void parkCar(int lotId, string location, string carType, int plateNumber);
     void findCar(int plateNumber);
     void removeCar(int plateNumber);
+    ParkingLot* getLotsArr();
+private:
+    ParkingLot* lotsArr;
 };
 
 #endif
