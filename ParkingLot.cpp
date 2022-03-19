@@ -26,3 +26,11 @@ ParkingLot::ParkingLot(int id, int rows, int columns){
 int ParkingLot::getId(){
     return id;
 }
+
+int ParkingLot::getRows(){
+    return rows;
+}
+
+int ParkingLot::getColumns(){
+    return columns;
+}

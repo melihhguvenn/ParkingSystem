@@ -8,6 +8,8 @@ public:
     ParkingLot();
     ParkingLot(int id, int rows, int columns);
     int getId();
+    int getRows();
+    int getColumns();
 private: 
     int id;
     int rows;

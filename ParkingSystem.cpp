@@ -26,14 +26,26 @@ void ParkingSystem::createLot(int id, int rows, int columns){
                 break;
             }
 
+        }
+
+        for (int i = 0; i < (sizeof(lotsArr)/sizeof(*lotsArr)); i++)
+        {
             if(lotsArr[i]->getId() == 0){
                 lotsArr[i] = new ParkingLot(id, rows, columns);
                 break;
             }
-        
+            else{
+                if (i == 4)
+                {
+                    cout << "No more than 5 lots can be created" << endl;
+                }
+                
+            }
+            
         }
 
         cout << "More than 5 Parking Lot cannot be created" << endl;
+        
     }
     
 }
@@ -43,7 +55,13 @@ void ParkingSystem::removeLot(int id){
 }
 
 void ParkingSystem::listLots(){
-
+    for (int i = 0; i < (sizeof(lotsArr)/sizeof(*lotsArr)); i++)
+    {
+        cout << "ID: " << lotsArr[i]->getId() << "Dim: (" << lotsArr[i]->getRows() 
+        << "," << lotsArr[i]->getColumns() << "), number of empty parking spaces: " 
+        << lotsArr[i]->getRows() * lotsArr[i]->getColumns() << endl;
+    }
+    
 }
 
 void ParkingSystem::lotContents(int id){
