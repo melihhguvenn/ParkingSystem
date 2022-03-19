@@ -18,7 +18,7 @@ public:
     void removeCar(int plateNumber);
     ParkingLot* getLotsArr();
 private:
-    ParkingLot* lotsArr;
+    ParkingLot** lotsArr;
 };
 
 #endif
