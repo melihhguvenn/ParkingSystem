@@ -22,7 +22,7 @@ ParkingLot::ParkingLot(int id, int rows, int columns){
     {
         lot[i] = new char[columns];
         cars[i] = new Car[columns];
-        
+
         for (int j = 0; j < columns; j++)
         {
             lot[i][j] = '+';
@@ -35,9 +35,11 @@ ParkingLot::~ParkingLot(){
     for (int i = 0; i < rows; i++)
     {
         delete [] lot[i];
+        delete [] cars[i];
     }
 
     delete [] lot;
+    delete [] cars;
 }
 
 int ParkingLot::getId(){
@@ -58,4 +60,12 @@ char** ParkingLot::getLot(){
 
 Car** ParkingLot::getCars(){
     return cars;
+}
+
+void ParkingLot::setId(int id){
+    ParkingLot::id = id;
+}
+
+void ParkingLot::setLot(char a, int rows, int columns){
+    lot[rows][columns] = a;
 }

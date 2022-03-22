@@ -9,7 +9,7 @@ public:
     Car(int plateNumber, char type);
     Car();
     int getPlateNumber();
-    void setPlateNumber(int& plate);
+    void setPlateNumber(int plate);
     char getType();
 private:
     int plateNumber;

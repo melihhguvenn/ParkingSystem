@@ -13,6 +13,14 @@ Car::Car(){
     type = '+';
 }
 
-void Car::setPlateNumber(int& plate){
+void Car::setPlateNumber(int plate){
     plateNumber = plate;
+}
+
+int Car::getPlateNumber(){
+    return plateNumber;
+}
+
+char Car::getType(){
+    return type;
 }

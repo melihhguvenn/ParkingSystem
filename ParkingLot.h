@@ -14,6 +14,8 @@ public:
     int getColumns();
     char** getLot();
     Car** getCars();
+    void setId(int id);
+    void setLot(char a, int rows, int columns);
 private: 
     int id;
     int rows;
