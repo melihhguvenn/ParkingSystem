@@ -188,18 +188,14 @@ void ParkingSystem::lotContents(int id){
 }
 
 void ParkingSystem::parkCar(int lotId, string location, string carType, int plateNumber){
-    char row = location[0];
+    char row = (char) location[0];
     int rowAsInt;
-    int columnsAsInt = location[1];
-    char** wantedLot;
-    Car** wantedCars;
+    int columnsAsInt = (int)location[1];
 
     for (int i = 0; i < (sizeof(lotsArr)/sizeof(*lotsArr)); i++)
     {
         if (lotsArr[i]->getId() == lotId)
         {
-            wantedLot = lotsArr[i]->getLot();
-            wantedCars = lotsArr[i]->getCars();
             switch (row)
             {
                 case 'A':
@@ -242,7 +238,7 @@ void ParkingSystem::parkCar(int lotId, string location, string carType, int plat
 
             if (carType == "a")
             {
-                if(wantedLot[rowAsInt][columnsAsInt] == '+'){
+                if(lotsArr[i]->getLot()[rowAsInt][columnsAsInt] == '+'){
                     lotsArr[i]->getCars()[rowAsInt][columnsAsInt].setPlateNumber(plateNumber);
                     lotsArr[i]->setLot('a', rowAsInt, columnsAsInt);
                     cout << "Light-duty car with number plate " << plateNumber 
@@ -256,8 +252,8 @@ void ParkingSystem::parkCar(int lotId, string location, string carType, int plat
                 
             if (carType == "b")
             {
-                if(rowAsInt != 0 || wantedLot[rowAsInt][columnsAsInt] == '+'){
-                    if (wantedLot[rowAsInt - 1][columnsAsInt] == '+')
+                if(rowAsInt != 0 || lotsArr[i]->getLot()[rowAsInt][columnsAsInt] == '+'){
+                    if (lotsArr[i]->getLot()[rowAsInt - 1][columnsAsInt] == '+')
                     {
                         lotsArr[i]->getCars()[rowAsInt][columnsAsInt].setPlateNumber(plateNumber);
                         lotsArr[i]->getCars()[rowAsInt-1][columnsAsInt].setPlateNumber(plateNumber);
