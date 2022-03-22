@@ -16,7 +16,7 @@ public:
     void parkCar(int lotId, string location, string carType, int plateNumber);
     void findCar(int plateNumber);
     void removeCar(int plateNumber);
-    ParkingLot* getLotsArr();
+    ParkingLot** getLotsArr();
 private:
     ParkingLot** lotsArr;
 };

@@ -16,11 +16,28 @@ ParkingLot::ParkingLot(int id, int rows, int columns){
 
     //initialization of 2D array as pointer to pointer
     lot = new char* [rows];
+    cars = new Car* [rows];
+
     for (int i = 0; i < rows; i++)
     {
         lot[i] = new char[columns];
+        cars[i] = new Car[columns];
+        
+        for (int j = 0; j < columns; j++)
+        {
+            lot[i][j] = '+';
+        }
+        
     }
-    
+}
+
+ParkingLot::~ParkingLot(){
+    for (int i = 0; i < rows; i++)
+    {
+        delete [] lot[i];
+    }
+
+    delete [] lot;
 }
 
 int ParkingLot::getId(){
@@ -33,4 +50,12 @@ int ParkingLot::getRows(){
 
 int ParkingLot::getColumns(){
     return columns;
+}
+
+char** ParkingLot::getLot(){
+    return lot;
+}
+
+Car** ParkingLot::getCars(){
+    return cars;
 }
