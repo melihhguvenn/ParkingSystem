@@ -17,11 +17,12 @@ public:
     void setId(int id);
     void setLot(char a, int rows, int columns);
 private: 
-    int id;
-    int rows;
-    int columns;
+    int idx;
+    int rowsx;
+    int columnsx;
     char** lot;
     Car** cars;
+    char plus;
 };
 
 #endif

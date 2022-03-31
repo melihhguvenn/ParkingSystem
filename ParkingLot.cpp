@@ -4,15 +4,16 @@ using namespace std;
 #include "ParkingLot.h"
 
 ParkingLot::ParkingLot(){
-    id = 0;
-    rows = 0;
-    columns = 0;
+    idx = 0;
+    rowsx = 0;
+    columnsx = 0;
 }
 
 ParkingLot::ParkingLot(int id, int rows, int columns){
-    ParkingLot::id = id;
-    ParkingLot::rows = rows;
-    ParkingLot::columns = columns;
+    idx = id;
+    rowsx = rows;
+    columnsx = columns;
+    plus = '+';
 
     //initialization of 2D array as pointer to pointer
     lot = new char* [rows];
@@ -25,14 +26,14 @@ ParkingLot::ParkingLot(int id, int rows, int columns){
 
         for (int j = 0; j < columns; j++)
         {
-            lot[i][j] = '+';
+            lot[i][j] = plus;
         }
         
     }
 }
 
 ParkingLot::~ParkingLot(){
-    for (int i = 0; i < rows; i++)
+    for (int i = 0; i < rowsx; i++)
     {
         delete [] lot[i];
         delete [] cars[i];
@@ -43,15 +44,15 @@ ParkingLot::~ParkingLot(){
 }
 
 int ParkingLot::getId(){
-    return id;
+    return idx;
 }
 
 int ParkingLot::getRows(){
-    return rows;
+    return rowsx;
 }
 
 int ParkingLot::getColumns(){
-    return columns;
+    return columnsx;
 }
 
 char** ParkingLot::getLot(){
@@ -63,7 +64,7 @@ Car** ParkingLot::getCars(){
 }
 
 void ParkingLot::setId(int id){
-    ParkingLot::id = id;
+    idx = id;
 }
 
 void ParkingLot::setLot(char a, int rows, int columns){

@@ -3,9 +3,9 @@ using namespace std;
 
 #include "Car.h"
 
-Car::Car(int plateNumber, char type){
-    Car::plateNumber = plateNumber;
-    Car::type = type;
+Car::Car(int plateNumberInput, char typeInput){
+    plateNumber = plateNumberInput;
+    type = typeInput;
 }
 
 Car::Car(){
